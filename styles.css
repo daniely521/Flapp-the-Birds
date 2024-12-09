@@ -56,6 +56,9 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
+#startbutton:hover {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
 
 #game_container {
     display: none;
@@ -63,7 +66,7 @@ body {
 
 #game_canvas {
     position: absolute;
-    top: 50%;
+    top: 67%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 320px;
@@ -74,7 +77,20 @@ body {
 
 .checkbox {
     align-self: flex-start;
-    margin-left: 46%;
+    margin-left: 38%;
     text-align: left;
     margin-bottom: -20px;
+}
+
+#bth {
+    display: block;
+    margin-top: 20px;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#bth:hover {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }

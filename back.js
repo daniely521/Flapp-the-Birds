@@ -269,6 +269,10 @@ function draw(){
     }
 }
 
+document.getElementById("bth").addEventListener("click", ()=>{
+    location.reload()
+});
+
 //game state variable
 let gameOver = false;
 let previousBY = bY;
