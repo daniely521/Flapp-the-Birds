@@ -56,6 +56,18 @@ let gravity = 2.4;
 let score = 0;
 let gameSpeed = 2;
 
+// Function to update game speed based on slider value
+function updateGameSpeed() {
+    const speedValue = document.getElementById('speed').value;
+    gameSpeed = parseInt(speedValue) + 1; // Adjusting to match the original speed settings
+}
+
+// Add event listener to update speed when slider changes
+document.getElementById('speed').addEventListener('input', updateGameSpeed);
+
+// Initial speed setup
+updateGameSpeed();
+
 let pipes = [];
 pipes[0] = {
   x: canvas.width,
@@ -81,7 +93,7 @@ document.addEventListener('keydown', (event) => {
             gameOver = false;
             score = 0;
             bY = 150;
-            gameSpeed = 2;
+            updateGameSpeed();
             birdVelocity = 0;
             isBouncing = false;
             fgX = 0;
@@ -177,6 +189,19 @@ function draw(){
     //draw background
     ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
     
+    // //define a new object for the item
+    // let item = new Image();
+    // item.src = 'resources/assets/item.png'; // Make sure to have this image in your resources
+
+    // //randomly decide when to place the item
+    // if (Math.random() < 0.01) { // Adjust probability as needed
+    //     pipes.push({
+    //         x: canvas.width,
+    //         y: Math.floor(Math.random() * (pipe.height - gap)) - pipe.height,
+    //         hasItem: true // Flag to indicate this pipe has an item
+    //     });
+    // }
+
     for(let i = 0; i < pipes.length; i++) {
         constant = pipe.height + gap;
         
@@ -191,6 +216,11 @@ function draw(){
             pipes[i].y, 
             180);
             
+        // // Draw item if this pipe has one
+        // if (pipes[i].hasItem) {
+        //     ctx.drawImage(item, pipes[i].x + pipe.width / 2 - item.width / 2, pipes[i].y + constant / 2 - item.height / 2);
+        // }
+
         //move pipes
         pipes[i].x -= gameSpeed;
   
@@ -269,8 +299,8 @@ function draw(){
     }
 }
 
-document.getElementById("bth").addEventListener("click", ()=>{
-    location.reload()
+document.getElementById("bth").addEventListener("click", () => {
+    location.reload();  
 });
 
 //game state variable

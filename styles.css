@@ -68,17 +68,19 @@ body {
     position: absolute;
     top: 67%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -80%);
     width: 320px;
     height: 480px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+
+
 .checkbox {
     align-self: flex-start;
-    margin-left: 38%;
-    text-align: left;
+    margin-left: 46%;
+    text-align: center;
     margin-bottom: -20px;
 }
 
@@ -90,6 +92,10 @@ body {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    position: absolute;
+    top: 67%;
+    left: 50%;
+    transform: translate(-50%, 80%);
 }
 #bth:hover {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
