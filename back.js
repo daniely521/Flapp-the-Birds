@@ -59,7 +59,15 @@ let gameSpeed = 2;
 // Function to update game speed based on slider value
 function updateGameSpeed() {
     const speedValue = document.getElementById('speed').value;
-    gameSpeed = parseInt(speedValue) + 1; // Adjusting to match the original speed settings
+    if (speedValue === '1') {
+        gameSpeed = 2;
+    } else if (speedValue === '2') {
+        gameSpeed = 3;
+    } else if (speedValue === '3') {
+        gameSpeed = 4;
+    } else if (speedValue === '4') {
+        gameSpeed = 5;
+    }
 }
 
 // Add event listener to update speed when slider changes
@@ -224,8 +232,8 @@ function draw(){
         //move pipes
         pipes[i].x -= gameSpeed;
   
-        //generate new pipes
-        if (pipes[i].x === 30) {
+        
+        if (pipes[i].x === canvas.width/2/2) {
             pipes.push({
                 x: canvas.width,
                 y: Math.floor(Math.random() * (pipe.height - gap)) - pipe.height
